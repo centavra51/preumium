@@ -30,13 +30,19 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <h3 className="text-lg font-semibold text-white/50 mb-2">Company</h3>
           <Link href="/work" className="hover:text-accent transition-colors" data-cursor="Open">Work</Link>
-          <Link href="/about" className="hover:text-accent transition-colors" data-cursor="Open">Studio</Link>
+          <Link href="/studio" className="hover:text-accent transition-colors" data-cursor="Open">Studio</Link>
           <Link href="/contact" className="hover:text-accent transition-colors" data-cursor="Open">Contact</Link>
         </div>
       </div>
       
       <div className="max-w-[1320px] mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
-        <p>&copy; {new Date().getFullYear()} Studio Agency. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+          <p>&copy; {new Date().getFullYear()} Studio Agency. All rights reserved.</p>
+          <span className="hidden md:inline text-white/20">|</span>
+          <p>
+            Developed by: <a href="https://da.amz-creator.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors">Digital Architect</a>
+          </p>
+        </div>
         <div className="flex gap-6 mt-4 md:mt-0">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
