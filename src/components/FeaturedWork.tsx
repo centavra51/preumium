@@ -11,28 +11,28 @@ const projects = [
     title: "Fintech Reimagined",
     category: "Product Design",
     slug: "fintech-reimagined",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    image: "/portfolio_fintech.png",
   },
   {
     id: 2,
     title: "Aura Skincare",
     category: "E-Commerce",
     slug: "aura-skincare",
-    image: "https://images.unsplash.com/photo-1615397323602-0c9f1c841bb7?q=80&w=2070&auto=format&fit=crop",
+    image: "/portfolio_skincare.png",
   },
   {
     id: 3,
     title: "Velocity OS",
     category: "Brand Identity",
     slug: "velocity-os",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+    image: "/portfolio_os.png",
   },
   {
     id: 4,
     title: "Lumina Workspace",
     category: "Web App",
     slug: "lumina-workspace",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
+    image: "/portfolio_workspace.png",
   }
 ];
 
@@ -51,11 +51,11 @@ export function FeaturedWork() {
       <div className="max-w-[1320px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24">
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">
-            Featured <br /><span className="text-black/30">Work</span>
+            Featured <br /><span className="text-foreground/30">Work</span>
           </h2>
           <Link 
             href="/work" 
-            className="mt-6 md:mt-0 text-sm font-bold uppercase tracking-widest border-b border-black pb-1 hover:text-accent hover:border-accent transition-colors"
+            className="mt-6 md:mt-0 text-sm font-bold uppercase tracking-widest border-b border-foreground/50 pb-1 hover:text-accent hover:border-accent transition-colors"
             data-cursor="Explore"
           >
             View all projects
@@ -70,21 +70,23 @@ export function FeaturedWork() {
               className={`group flex flex-col ${index % 2 !== 0 ? 'md:mt-32' : ''}`}
               data-cursor="View Project"
             >
-              <div className="relative w-full aspect-[4/5] overflow-hidden bg-gray-200">
-                <img
+              <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#1B1B1B] rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-foreground/5">
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                 />
                 
                 {/* Hover overlay exact match */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
               
-              <div className="mt-6 flex justify-between items-center">
-                <h3 className="text-2xl md:text-3xl font-bold">{project.title}</h3>
-                <span className="text-sm font-semibold tracking-wide text-black/50 uppercase">{project.category}</span>
+              <div className="mt-8 flex justify-between items-center px-4">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{project.title}</h3>
+                <span className="text-xs font-bold tracking-widest text-foreground/50 uppercase">{project.category}</span>
               </div>
             </Link>
           ))}
