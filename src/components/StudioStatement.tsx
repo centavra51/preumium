@@ -18,12 +18,12 @@ export function StudioStatement() {
     <section 
       ref={containerRef}
       id="studio" 
-      className="py-32 md:py-48 px-6 md:px-12 bg-dark-surface text-text-light overflow-hidden"
+      className="py-24 md:py-32 lg:py-48 px-6 md:px-12 bg-dark-surface text-text-light overflow-hidden"
     >
       <div className="max-w-[1320px] mx-auto flex flex-col items-center">
         <motion.div style={{ y: y1, opacity }} className="max-w-5xl text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
-            We merge logic with intuition to build <span className="text-accent italic font-medium">unforgettable</span> digital experiences that challenge the ordinary.
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.3] md:leading-[1.1]">
+            We merge logic with intuition to build <span className="text-accent italic font-medium inline-block">unforgettable</span> digital experiences that challenge the ordinary.
           </h2>
           
           <div className="mt-16 flex flex-col sm:flex-row gap-8 sm:gap-16 justify-center items-center text-left">

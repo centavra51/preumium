@@ -50,8 +50,8 @@ export function FeaturedWork() {
     <section ref={containerRef} id="work" className="py-24 md:py-40 px-6 md:px-12 bg-background">
       <div className="max-w-[1320px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter">
-            Featured <br /><span className="text-foreground/30">Work</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter">
+            Featured <br className="hidden sm:block" /><span className="text-foreground/30">Work</span>
           </h2>
           <Link 
             href="/work" 

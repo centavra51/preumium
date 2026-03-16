@@ -98,6 +98,20 @@ export function Navigation() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+                className="mt-4"
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="inline-block px-8 py-4 border border-current text-2xl font-medium rounded-full hover:bg-foreground hover:text-background transition-colors"
+                >
+                  Start a Project
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}
